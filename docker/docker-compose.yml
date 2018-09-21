@@ -1,0 +1,14 @@
+version: "2.1"
+
+services:
+
+  #
+  # Koa Template API (v1)
+  #
+  koa-template-app-v1:
+    image: koa-template-app-v1:latest
+    ports:
+      - 8380:8380
+    environment:
+      NODE_ENV: container
+      ENABLE_REQUEST_TRACING: "true"
