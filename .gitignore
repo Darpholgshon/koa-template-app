@@ -1,0 +1,6 @@
+.idea/
+koa-with-controllers.iml
+
+node_modules
+coverage
+dist

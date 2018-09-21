@@ -1,0 +1,22 @@
+default:
+  server:
+    port: 8380
+
+  log:
+   level: info
+   pretty: true
+
+  microservice:
+    server:
+      name: test/controllers/api/v1
+
+production:
+  log:
+   pretty: false
+
+test:
+  server:
+    port: 0
+
+  log:
+    level: debug

@@ -1,0 +1,9 @@
+apps:
+  - script: ./dist/app.js
+    name: "koa-template-app-v1"
+    instances: 1
+    exec_mode: "cluster"
+    watch: true
+    combine_logs: true
+    env:
+      NODE_ENV: container

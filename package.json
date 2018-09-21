@@ -1,0 +1,57 @@
+{
+  "name": "koa-template-app-v1",
+  "version": "1.0.0",
+  "description": "Template Application for Typescript and Koa using Pino Logger",
+  "main": "./dist/app.js",
+  "scripts": {
+    "clean": "rm -rf dist",
+    "build": "tsc",
+    "start": "ts-node src/app.ts",
+    "test": "jest"
+  },
+  "keywords": [
+    "koa",
+    "pino",
+    "web",
+    "typescript"
+  ],
+  "author": "Ralph Hodgson",
+  "license": "ISC",
+  "dependencies": {
+    "koa": "2.5.3",
+    "koa-bodyparser": "4.2.1",
+    "koa-multer": "1.0.2",
+    "koa-router": "7.4.0",
+    "konfig-yaml": "0.9.1",
+    "pino": "5.6.1",
+    "pino-pretty": "2.2.0",
+    "reflect-metadata": "0.1.12",
+    "routing-controllers": "0.7.7"
+  },
+  "devDependencies": {
+    "@types/jest": "23.3.2",
+    "@types/koa": "2.0.46",
+    "@types/mocha": "5.2.5",
+    "@types/node": "8.9.4",
+    "@types/pino": "5.6.0",
+    "jest": "23.6.0",
+    "supertest": "3.3.0",
+    "ts-jest": "23.10.1",
+    "ts-node": "7.0.1",
+    "tslint": "5.11.0",
+    "typescript": "3.0.3"
+  },
+  "jest": {
+    "moduleFileExtensions": [
+      "ts",
+      "js"
+    ],
+    "roots": [
+      "<rootDir>/test/"
+    ],
+    "transform": {
+      "\\.ts$": "ts-jest"
+    },
+    "testRegex": "/test/.*\\.ts$"
+  }
+}
