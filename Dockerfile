@@ -18,8 +18,10 @@ WORKDIR /app
 RUN echo ${NPM_TOKEN} \
   && echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" > /app/.npmrc \
   && npm install \
-  && npm build \
+  && npm install typescript -g \
+  && npm run build \
   && npm prune --production \
+  && node --version \
   && rm -f .npmrc
 
 ENV VERSION ${VERSION}
