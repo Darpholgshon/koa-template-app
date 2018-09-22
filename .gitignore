@@ -1,5 +1,5 @@
 .idea/
-koa-with-controllers.iml
+*.iml
 
 node_modules
 coverage

@@ -1,4 +1,4 @@
-FROM pa-registry.transform.pacpservices.net/alpine-node-pm2:v1.2.8-node8
+FROM pa-registry.transform.pacpservices.net/alpine-node-pm2:v1.2.10-node8
 
 MAINTAINER Press Association <datasquad@pressassociation.com>
 
