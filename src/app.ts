@@ -10,6 +10,7 @@ import {log} from './util/pino.logger';
 
 // creates app, registers all controller routes and returns you Koa app instance
 const server = createKoaServer({
+  routePrefix: '/' + SERVICE,
   controllers: [__dirname + '/controller/*.ts']
 });
 
