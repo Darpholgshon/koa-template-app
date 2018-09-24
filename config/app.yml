@@ -22,8 +22,10 @@ test:
     level: debug
 
 container:
+  server:
+    port: 8010
   log:
     level: debug
-    pretty: false
+    pretty: true
 
 

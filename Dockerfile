@@ -26,6 +26,6 @@ RUN echo ${NPM_TOKEN} \
 
 ENV VERSION ${VERSION}
 
-EXPOSE 8380
+EXPOSE 8010
 
 CMD ["koa-template-app-v1"]

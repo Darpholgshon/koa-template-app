@@ -8,7 +8,7 @@ services:
   koa-template-app-v1:
     image: koa-template-app-v1:latest
     ports:
-      - 8380:8380
+      - 8010:8010
     environment:
       NODE_ENV: container
       ENABLE_REQUEST_TRACING: "true"
