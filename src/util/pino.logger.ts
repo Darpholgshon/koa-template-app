@@ -1,13 +1,14 @@
 import * as pino from 'pino';
-import * as konfig from 'konfig-yaml';
 
-const config = konfig('app');
-const log = pino({
-  level: config.log.level,
-  name: config.microservice.server.name,
-  prettyPrint: config.log.pretty
-});
+import {ServerConfiguration} from '../util/server.configuration';
 
-log.info(`Logging Initialised => log: [${JSON.stringify(config.log)}]`);
+const options = {
+  level: ServerConfiguration.getLogLevel(),
+  name: ServerConfiguration.getServiceName(),
+  prettyPrint: ServerConfiguration.isLogPretty()
+};
+const log = pino(options);
+
+log.info(`Logging Initialised => [${options}]`);
 
 export {log};
