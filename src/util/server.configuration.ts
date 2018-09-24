@@ -9,7 +9,7 @@ export class ServerConfiguration {
   }
 
   static getContextPath(): string {
-    return '/' + this.getServiceName()
+    return '/' + this.getServiceName();
   }
 
   static getServiceName(): string {

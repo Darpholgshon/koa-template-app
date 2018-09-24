@@ -1,6 +1,6 @@
 import * as pino from 'pino';
 
-import {ServerConfiguration} from '../util/server.configuration';
+import {ServerConfiguration} from './server.configuration';
 
 const options = {
   level: ServerConfiguration.getLogLevel(),
@@ -9,6 +9,6 @@ const options = {
 };
 const log = pino(options);
 
-log.info(`Logging Initialised => [${options}]`);
+log.info(`Logging Initialised => ${JSON.stringify(options)}`);
 
 export {log};
