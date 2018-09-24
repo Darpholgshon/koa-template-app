@@ -11,7 +11,7 @@ import {log} from './util/pino.logger';
 // creates app, registers all controller routes and returns you Koa app instance
 const server = createKoaServer({
   routePrefix: '/' + SERVICE,
-  controllers: [__dirname + '/controller/*.ts']
+  controllers: [__dirname + '/controller/*.*']
 });
 
 // Add middleware.......
@@ -19,6 +19,7 @@ const server = createKoaServer({
 // Startup application.
 const app = server.listen(config.server.port, () => {
   log.info(`Application Initialised => [${SERVICE}], Port: [${app.address().port}]`);
+  log.debug(`Controllers Registered From: [${__dirname}/controller]`);
 });
 
 export {app};

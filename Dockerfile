@@ -28,4 +28,6 @@ ENV VERSION ${VERSION}
 
 EXPOSE 8010
 
+RUN pwd
+
 CMD ["koa-template-app-v1"]
