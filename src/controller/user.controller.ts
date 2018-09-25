@@ -1,4 +1,4 @@
-import {Body, Controller, Delete, Get, Param, Post, Put, UseInterceptor} from 'routing-controllers';
+import {Body, Controller, Delete, Get, HeaderParam, Param, Post, Put, QueryParam, UseInterceptor} from 'routing-controllers';
 import {UserInterceptor} from '../interceptor/user.interceptor';
 
 @Controller('/user')
@@ -6,8 +6,8 @@ import {UserInterceptor} from '../interceptor/user.interceptor';
 export class UserController {
 
   @Get('/')
-  getAll() {
-    return {message: 'This action returns all users'};
+  getAll(@QueryParam('limit') limit: number, @HeaderParam('authorization') token: string) {
+    return {message: 'This action returns all users', limit};
   }
 
   @Get('/:id')
