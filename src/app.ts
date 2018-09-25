@@ -20,6 +20,7 @@ const app = server.listen(ServerConfiguration.getServerPort(), () => {
 
 // Example simple error handler.
 app.on('error', (err) => {
+  // TODO - Investigate: https://github.com/typestack/routing-controllers#error-handlers
   log.error('server error', err);
 });
 
