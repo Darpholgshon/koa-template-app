@@ -1,13 +1,14 @@
+import {createKoaServer} from 'routing-controllers';
+import {ServerConfiguration} from './util/server.configuration';
+
+// Import controllers, middleware and actuators (extra controllers).
 import './controller';
 import './middleware';
 import './actuator';
 
-import {createKoaServer} from 'routing-controllers';
-import {ServerConfiguration} from './util/server.configuration';
-
 import {log} from './util/pino.logger';
 
-// creates app, registers all controller routes and returns you Koa app instance
+// creates app, magically register all controller routes and middleware and returns you Koa app instance
 const server = createKoaServer({
   routePrefix: ServerConfiguration.getContextPath(),
 });
@@ -15,6 +16,11 @@ const server = createKoaServer({
 // Startup application.
 const app = server.listen(ServerConfiguration.getServerPort(), () => {
   log.info(`Application Initialised => {"name": "${ServerConfiguration.getServiceName()}", "port": "${app.address().port}"}`);
+});
+
+// Example simple error handler.
+app.on('error', (err) => {
+  log.error('server error', err);
 });
 
 export {app};
