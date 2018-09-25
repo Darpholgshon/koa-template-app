@@ -1,6 +1,8 @@
-import {Body, Controller, Delete, Get, Param, Post, Put} from 'routing-controllers';
+import {Body, Controller, Delete, Get, Param, Post, Put, UseInterceptor} from 'routing-controllers';
+import {LocationInterceptor} from '../interceptor/location.interceptor';
 
 @Controller('/location')
+@UseInterceptor(LocationInterceptor)
 export class LocationController {
 
   @Get('/')

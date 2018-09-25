@@ -1,6 +1,8 @@
-import {Body, Controller, Delete, Get, Param, Post, Put} from 'routing-controllers';
+import {Body, Controller, Delete, Get, Param, Post, Put, UseInterceptor} from 'routing-controllers';
+import {UserInterceptor} from '../interceptor/user.interceptor';
 
 @Controller('/user')
+@UseInterceptor(UserInterceptor)
 export class UserController {
 
   @Get('/')

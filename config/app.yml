@@ -3,7 +3,7 @@ default:
     port: 8380
 
   log:
-    level: info
+    level: debug
     pretty: true
 
   microservice:
@@ -12,20 +12,15 @@ default:
 
 production:
   log:
+    level: info
     pretty: false
 
 test:
   server:
     port: 0
 
-  log:
-    level: debug
-
 container:
   server:
     port: 8010
-  log:
-    level: debug
-    pretty: true
 
 

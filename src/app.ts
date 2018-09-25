@@ -1,4 +1,5 @@
 import './controller';
+import './middleware';
 import './actuator';
 
 import {createKoaServer} from 'routing-controllers';
@@ -8,7 +9,7 @@ import {log} from './util/pino.logger';
 
 // creates app, registers all controller routes and returns you Koa app instance
 const server = createKoaServer({
-  routePrefix: ServerConfiguration.getContextPath()
+  routePrefix: ServerConfiguration.getContextPath(),
 });
 
 // Startup application.
