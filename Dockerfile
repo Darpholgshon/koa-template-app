@@ -21,6 +21,7 @@ RUN echo ${NPM_TOKEN} \
   && npm install typescript -g \
   && npm run build \
   && npm prune --production \
+  && npm uninstall typescript -g \
   && node --version \
   && rm -f .npmrc
 
