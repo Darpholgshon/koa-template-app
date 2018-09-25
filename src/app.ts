@@ -10,7 +10,7 @@ import {log} from './util/pino.logger';
 
 // creates app, magically register all controller routes and middleware and returns you Koa app instance
 const server = createKoaServer({
-  routePrefix: ServerConfiguration.getContextPath(),
+  routePrefix: ServerConfiguration.getContextPath()
 });
 
 // Startup application.
